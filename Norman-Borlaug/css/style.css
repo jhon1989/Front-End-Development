@@ -1,22 +1,22 @@
 body{
-  margin : 0px;
+  margin: 0px;
   padding:0px;
 }
 .title{
-   font-size  : 350%;
+   font-size: 350%;
    font-family: verdana;
-   text-align :center;
+   text-align:center;
 }
 h2{
-  font-size  :200%;
-  text-align :center;
+  font-size:200%;
+  text-align:center;
   font-weight: normal;
 }
 .contenedor{
-  background-color     : #dfdfdf;
-  width                :90%;
-  margin-left          :5%;
-  -mox-border-radius   : 4px 4px 4px 4px;
+  background-color: #dfdfdf;
+  width:90%;
+  margin-left:5%;
+  -mox-border-radius: 4px 4px 4px 4px;
   -webkit-border-radius: 4px 4px 4px 4px;
 }
 .div-image{
