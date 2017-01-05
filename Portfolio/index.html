@@ -1,150 +1,192 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <meta charset="utf-8">
-      <title>My Portfolio</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Jhon Janer - Portfolio</title>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+        <style>
+         .carousel-inner > .item > img,
+         .carousel-inner > .item > a > img {
+         width: 70%;
+         height: 400px;
+         margin: auto;
+       }
+      </style>
+
+
     </head>
+
     <body>
 
-   <header id="header" class="navbar navbar-default navbar-fixed-top">
-     <div class="container">
-       <a href="#top" class="scrollable">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkyVvQFwsbKYdPNaxgzDL6cBWex-M4CVYAQ-Y5wu6xLGBgqrly" class="img-circle" width="100" height="236" alt="Software Developer" title="Software Developer"/>
-       </a>
-       <button type="button" data-toggle="collapse" data-targe="#navbar" aria-expanded="false" class="navbar-toggle collapse">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
-       <nav id="navbar" class="collapse navbar-collapse" role="navigation">
-          <ul class="nav navbar-nav navbar-right" role>
-             <li class="active">
-               <a href="#top" class="scrollable">ABOUT</a>
-            </li>
-             <li>
-               <a href="#portfolio" class="scrollable">PORFOLIO</a>
-            </li>
-             <li>
-               <a href="#contact" class="scrollable">CONTACT</a>
-            </li>
-          </ul>
-       </nav>
-     </div>
-</header>
-<a id="top" name="home"></a>
-<main>
-  <header>
-    <div class="intro-text">
-      <p align="justify">
-         Front-End Developer and Back-End Developer, whit practice in creation of projects.
-         With technologies like javascript, php, mysql, css, bootstrap
-         <hr class="star-bright"/>
-         <span class="skills">Web developer, Backend Experience Programming</span>
-      </p>
-    </div>
-  </header>
+	<header id="header" class="navbar navbar-default navbar-fixed-top">
+	 <div class="container">
+	   <a href="#top" class="scrollable">
+	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkyVvQFwsbKYdPNaxgzDL6cBWex-M4CVYAQ-Y5wu6xLGBgqrly" class="img-circle" width="100" height="236" alt="Software Developer" title="Software Developer"/>
+	   </a>
+	   <button type="button" data-toggle="collapse" data-targe="#navbar" aria-expanded="false" class="navbar-toggle collapse">
+	     <span class="sr-only">Toggle navigation</span>
+	     <span class="icon-bar"></span>
+	     <span class="icon-bar"></span>
+	   </button>
+	   <nav id="navbar" class="collapse navbar-collapse" role="navigation">
+	      <ul class="nav navbar-nav navbar-right" role>
+	         <li class="active">
+	           <a href="#top" class="scrollable">ABOUT</a>
+	        </li>
+	         <li>
+	           <a href="#portfolio" class="scrollable">PORTFOLIO</a>
+	        </li>
+	         <li>
+	           <a href="#contact" class="scrollable">CONTACT</a>
+	        </li>
+	      </ul>
+	   </nav>
+	 </div>
+	</header>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <hr class="start-dark"/>
-  <ul class="grid">
-    <li>
-      <img src="http://imag.webcindario.com/formleads.png" alt="Leads"/>
-    </li>
-    <li>
-        <img src="http://imag.webcindario.com/formleads1.png" alt="Leas"/>
-    </li>
-    <li>
-        <img src="http://imag.webcindario.com/reports.png" alt="Reports"/>
-    </li>
-    <li>
-        <img src="http://imag.webcindario.com/users.png" alt="Tree Users"/>
-    </li>
-  </ul>
-</section>
-<section id="contact">
-  <h2>Contact Me</h2>
-  <hr class="star-dark" />
-  <div>
-    <form id="contactForm" novalidate="">
-      <div class="form-contact">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Name" required />
-      </div>
-      <div class="form-contact">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Email Address" required="required" />
-      </div>
-      <div class="form-contact">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="Phone Number" required />
-      </div>
-      <div class="form-contact">
-        <label for="message">Message</label>
-        <textarea id="message" rows="2" placeholder="Message" required ></textarea>
-      </div>
-      <div class="clearfix"></div>
-      <button type="submit" class="btn btn-default">Send</button>
-    </form>
-    <div>
-      <p align="justify">
-          You want to have contact with me, to ask about my experience,
-          to ask any sujerencia or to request my resume,
-          please do not hesitate to contact me, filling the fields and clicking on send button,
-          I gladly will answer. Thank you
-      </p>
-    </div>
-  </div>
-</section>
-<div class="scroll-top">
-  <a href="#top" class="button scrollable"><i class="fa fa-chevron-up"></i></a>
-</div>
-</main>
-<footer>
-  <div id="footer-above">
-    <div>
-      <h3>AROUND THE WEB</h3>
-      <p>Made in Colombia <br> whit
-        <i class="fa fa-fw fa-coffee"></i>and
-        <i class="fa fa-fw fa-music"></i>
-        <br>
-        <a href="#top">Jhon Janer</a>.
-      </p>
-    </div>
-     <div>
-      <h3>OTHER CONTACT</h3>
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/nhome/?trk=" class="button social" target="_blank">
-            <i class="fa fa-fw fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/jhon1989" class="button social" target="_blank">
-            <i class="fa fa-fw fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/?ref=tn_tnmn" class="button social" target="_blank">
-            <i class="fa fa-fw fa-facebook"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div id="footer-below">Jhon Janer
-    <script>
-      document.write(new Date().getFullYear())
-    </script>. All Rights Reserved
-  </div>
-</footer>
+            <a id="top" name="home"></a>
 
+            <main>
+
+                <section class="intro-text text-center">
+                  <span align="justify">
+                    Front-End Developer and Back-End Developer, whit practice in creation of projects.
+                    With technologies like javascript, php, mysql, css, bootstrap
+                     <hr class="star-bright" />
+                     <span class="skills">Web developer, Backend Experience Programming</span>
+                  </span>
+                </section>
+
+            <section id="portfolio">
+              <h2>Portfolio</h2>
+              <hr class="start-dark"/>
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators" style='color:red'>
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li data-target="#myCarousel" data-slide-to="2"></li>
+		    <li data-target="#myCarousel" data-slide-to="3"></li>
+		  </ol>
+
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <a href='https://artesyweb.xyz/login'><img src="portfolio/public/images/leads.png" target="_blank" title='Artes y Web' alt="Leads"></a>
+		    </div>
+
+		    <div class="item">
+		      <a href='https://artesyweb.xyz/login'><img src="portfolio/public/images/leads.png" title='Artes y Web' target="_blank" alt="Chania"></a>
+		    </div>
+
+		    <div class="item">
+		      <a href='https://artesyweb.xyz/login'><img src="portfolio/public/images/leads.png" title='Artes y Web' target="_blank" alt="Flower"></a>
+		    </div>
+
+		    <div class="item">
+		      <a href='https://artesyweb.xyz/login'><img src="portfolio/public/images/leads.png" title='Artes y Web' target="_blank" alt="Flower"></a>
+		    </div>
+		  </div>
+
+		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+	      </div>
+            </section>
+
+            <section id="contact">
+              <h2>Contact Me</h2>
+              <hr class="star-dark" />
+              <div>
+                <form id="contactForm" novalidate="">
+                  <div class="form-contact">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Name" required />
+                  </div>
+                  <div class="form-contact">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Email Address" required="required" />
+                  </div>
+                  <div class="form-contact">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Phone Number" required />
+                  </div>
+                  <div class="form-contact">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="2" placeholder="Message" required ></textarea>
+                  </div>
+                  <div class="clearfix"></div>
+                  <button type="button" class="btn btn-default send-email">Send</button>
+                </form>
+                <div>
+                  <p align="justify">
+                      You want to have contact with me, to ask about my experience,
+                      to ask any sujerencia or to request my resume,
+                      please do not hesitate to contact me, filling the fields and clicking on send button,
+                      I gladly will answer. Thank you
+                  </p>
+                </div>
+              </div>
+            </section>
+            <div class="scroll-top">
+              <a href="#top" class="button scrollable"><i class="fa fa-chevron-up"></i></a>
+            </div>
+
+            </main>
+
+            <footer>
+              <div id="footer-above">
+                <div>
+                  <h3>AROUND THE WEB</h3>
+                  <p>Made in Colombia <br> whit
+                    <i class="fa fa-fw fa-coffee"></i>and
+                    <i class="fa fa-fw fa-music"></i>
+                    <br>
+                    <a href="#top">Jhon Janer</a>.
+                  </p>
+                </div>
+                 <div>
+                  <h3>OTHER CONTACT</h3>
+                  <ul>
+                    <li>
+                      <a href="https://www.linkedin.com/nhome/?trk=" class="button social" target="_blank">
+                        <i class="fa fa-fw fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/jhon1989" class="button social" target="_blank">
+                        <i class="fa fa-fw fa-github"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/?ref=tn_tnmn" class="button social" target="_blank">
+                        <i class="fa fa-fw fa-facebook"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="footer-below">Jhon Janer
+                <script>
+                  document.write(new Date().getFullYear())
+                </script>. All Rights Reserved
+              </div>
+            </footer>
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script type="text/javascript" src="js/js.js"></script>
-</html
+</html>
