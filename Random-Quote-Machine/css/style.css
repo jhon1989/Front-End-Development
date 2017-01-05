@@ -1,0 +1,24 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  background-color: #034f84;
+}
+.article {
+  background-color: white;
+  position:relative;
+  top: 10em;
+}
+section article{
+  border-radius: 5px;
+  padding: 20px;
+}
+button{
+  color: white;
+}
+.author {
+  text-decoretion: none;
+}
+
+.tweeter-quote {
+  color: white;
+}
