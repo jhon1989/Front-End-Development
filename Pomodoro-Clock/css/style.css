@@ -6,7 +6,7 @@
 body {
   background-color: red;
 }
-html, body, main {
+html, main {
   height          : 100%;
   overflow        : hidden;
   background-color: #333333;
