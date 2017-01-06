@@ -2,65 +2,36 @@
 <html>
     <head>
       <meta charset="utf-8">
-      <title>Callculator</title>
+      <title>Twitch-Streamers</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
       <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-      <main class='container'>
-        <div class='rows text-center'>
-          <p><b> ELECTRONIC CALCULATOR </b></p>
-          <section class='screen col-md-offset-1 col-xs-offset-1 text-right'>
-            <input type='text' class='show-result' disabled></input>
-            <input type='text' class='show-operation' disabled></input>
+      <main class="container">
+        <section class='row' id="header">
+          <h1>Twitch Stremers</h1>
+          <section class="menu">
+            <section class="selector active" id="all">
+              <section class="circle"></section><p>All</p>
+            </section>
+            <section class="selector" id="online">
+              <section class='circle'></section><p>Online</p>
+            </section>
+            <section class='selector' id="offline">
+              <section class="circle"></section><p>Offline</p>
+            </section>
           </section>
-           <br>
-          <div class=''>
-            <button type='button' class='clear-text'>AC</button>
-            <button type='button' class='clear-text'>CE</button>
-            <button type='button' class='symbol btn-division'>/</button>
-            <button type='button' class='symbol btn-x'>*</button>
-          </div>
-          <div class='clearfix'></div>
-          <div class=''>
-            <button type='button' class='number btn-7'>7</button>
-            <button type='button' class='number btn-8'>8</button>
-            <button type='button' class='number btn-9'>9</button>
-            <button type='button' class='symbol btn-less'>-</button>
-          </div>
-          <div class='clearfix'></div>
-          <div class=''>
-            <button type='button' class='number btn-4'>4</button>
-            <button type='button' class='number btn-5'>5</button>
-            <button type='button' class='number btn-6'>6</button>
-            <button type='button' class='symbol btn-max'>+</button>
-          </div>
-          <div class='clearfix'></div>
-          <div class=''>
-            <button type='button' class='number btn-3'>3</button>
-            <button type='button' class='number btn-2'>2</button>
-            <button type='button' class='number btn-1'>1</button>
-            <button type='button' class='symbol btn-0'>0</button>
-          </div>
-          <div class='clearfix'></div>
-          <div class="row">
-            <div class='point-equal col-md-5'>
-              <button type='button' class='symbol point'>.</button>
-            </div>
-            <div class='point-equa col-md-5'>
-              <button type='button' class='equal'>=</button>
-            </div>
-          </div>
-          <div class='created-by'>
-            <p>Designed & Coded by <a href="http://jhonjanermoreno.info" target="_blank"> Jhon Janer </a> </p>
-          </div>
-        </div>
+        </section>
+        <section id="display"></section>
+        <footer class="row" id="footer">
+          <article class='text-center'>
+            <a href="http://s.codepen.io/jhon1989/debug/PGdXdg" target='_blank'>By jhonja</a>
+          </article>
+        </footer>
       </main>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
 </html

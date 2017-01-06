@@ -1,81 +1,66 @@
-var channels = [
- "freecodecamp",
- "test_channel",
- "ESL_SC2",
- "storbeck",
- "habathcx",
- "RobotCaleb",
- "noobs2ninjas",
- "Reddit",
- "PAX",
- "Jwillnuhh"
-];
-
-function getChannelInfo() {
- channels.forEach(function(channel) {
-   function makeURL(type, name) {
-     return 'https://wind-bow.gomix.me/twitch-api/' + type + '/' + name + '?callback=?';
-   };
-   $.getJSON(makeURL("streams", channel), function(data) {
-     var game, status;
-     if (data.stream === null) {
-       game = "Offline";
-       status = "offline";
-     } else if (data.stream === undefined) {
-       game   = "Account Closed";
-       status = "offline";
-     } else {
-       game = data.stream.game;
-       status = "online";
-     };
-     $.getJSON(makeURL("channels", channel), function(data) {
-       var logo      = data.logo != null ? data.logo : "https://dummyimage.com/50x50/ecf0e7/5c5457.jpg&text=0x3F",
-         name        = data.display_name != null ? data.display_name : channel,
-         description = status === "online" ? ': ' + data.status : "",
-         html = '';
-         html += '<div id="hover" class="row ' + status + '">';
-         html += '<div class="col-xs-2 col-sm-1" id="icon">';
-         html += '<a href=' + data.url + ' target="_blank">';
-         html += '<img src="' + logo + '" class="logo" title="Go to channel">' ;
-         html += '</a>';
-         html += '</div>';
-         html += '<div class="col-xs-10 col-sm-3" id="name">';
-         html += '<a id="name" title="'+ name +'" href=' + data.url + ' target="_blank">' + name + ' </a>';
-         html += '</div>';
-         html += '<div class="col-xs-10 col-sm-8" id="streaming">' + game;
-         html += '<span class="hidden-xs"> ' + description +' </span>';
-         html += '</div></div>';
-         status === "online" ? $("#display").prepend(html) : $("#display").append(html);
-     });
-   });
- });
-};
-
-$(document).ready(function() {
-
- getChannelInfo();
-
- $(".selector").click(function() {
-
-   $(".selector").removeClass("active");
-   $(this).addClass("active");
-
-   var status = $(this).attr('id');
-
-   if (status === "all") {
-
-     $(".online, .offline").removeClass("hidden");
-
-   } else if (status === "online") {
-
-     $(".online").removeClass("hidden");
-     $(".offline").addClass("hidden");
-
-   } else {
-
-     $(".offline").removeClass("hidden");
-     $(".online").addClass("hidden");
-
-   }
- })
+$('.random').click( function (event) {
+   event.preventDefault();
+   WIKI.getRandomWiki.randomWiki();
 });
+
+document.getElementById('clean').addEventListener('click', function () {
+   document.getElementById('search').value = " ";
+   document.getElementById('search').setAttribute('placeholder', 'Search here your  article');
+});
+
+$('#search').keypress( function (event) {
+     if  (event.which == 13) {
+         WIKI.getRandomWiki.getWiki();
+     }
+});
+
+var WIKI = WIKI || {};
+
+WIKI.getRandomWiki = {
+
+ randomWiki: function () {
+    return window.open('https://en.wikipedia.org/wiki/Special:Random');
+ },
+
+ getWiki: function () {
+   var ajax = $.ajax({
+      jsonp: 'callback',
+      dataType: 'jsonp',
+      url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=20&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch='+ $('#search').val(),
+      format:'json',
+   });
+
+   ajax.done( function (response) {
+      WIKI.getRandomWiki.travelResponse(response);
+      WIKI.getRandomWiki.moveDivSearch();
+   });
+
+   ajax.fail( function (response) {
+     alert('Error internal server');
+   });
+
+ },
+
+ travelResponse: function (response) {
+    var result   = response.query.pages,
+        div      = '',
+        pageWiki = 'https://en.wikipedia.org/?curid=';
+
+     $.each(result, function (key, value) {
+       div += "<a href='"+ pageWiki + value.pageid +"' class='btn-default href-wiki' target='_blank'><div class='w3-panel w3-card-2'><p>" + value.title + "</p><p>" + value.extract+ "</p></div></a>";
+     });
+
+      WIKI.getRandomWiki.appendResult(div);
+ },
+
+ appendResult: function (div) {
+   $('.search-wiki').empty().html(div);
+ },
+
+ moveDivSearch: function () {
+   $('#form-search').css({
+     'margin-top':'1px'
+   });
+ }
+
+}

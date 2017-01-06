@@ -1,180 +1,81 @@
-/* Created by Jhon Janer Moreno */
+var channels = [
+ "freecodecamp",
+ "test_channel",
+ "ESL_SC2",
+ "storbeck",
+ "habathcx",
+ "RobotCaleb",
+ "noobs2ninjas",
+ "Reddit",
+ "PAX",
+ "Jwillnuhh"
+];
 
-/* Declare all variable for applicaciton */
-var $showResult    = $('.show-result'),
-    $showOperation = $('.show-operation'),
-    $btnDivision   = $('.btn-division'),
-    $btnPlus       = $('.btn-max'),
-    $btnLess       = $('.btn-less'),
-    $btnPoint      = $('.point'),
-    $btnMultiply   = $('.btn-x'),
-    $btnEqual      = $('.equal'),
-    $btnOne        = $('.btn-1'),
-    $btnTwo        = $('.btn-2'),
-    $btnThree      = $('.btn-3'),
-    $btnFour       = $('.btn-4'),
-    $btnFive       = $('.btn-5'),
-    $btnSix        = $('.btn-6'),
-    $btnSevent     = $('.btn-7'),
-    $btnEight      = $('.btn-8'),
-    $btnNine       = $('.btn-9'),
-    $btnCero       = $('.btn-0'),
-    pressEqual     = false,
-    allSymbol      = [$showOperation.text(), $btnDivision.text(), $btnPlus.text(), $btnLess.text(), $btnPoint.text(), $btnMultiply.text(), $btnEqual.text()];
+function getChannelInfo() {
+ channels.forEach(function(channel) {
+   function makeURL(type, name) {
+     return 'https://wind-bow.gomix.me/twitch-api/' + type + '/' + name + '?callback=?';
+   };
+   $.getJSON(makeURL("streams", channel), function(data) {
+     var game, status;
+     if (data.stream === null) {
+       game = "Offline";
+       status = "offline";
+     } else if (data.stream === undefined) {
+       game   = "Account Closed";
+       status = "offline";
+     } else {
+       game = data.stream.game;
+       status = "online";
+     };
+     $.getJSON(makeURL("channels", channel), function(data) {
+       var logo      = data.logo != null ? data.logo : "https://dummyimage.com/50x50/ecf0e7/5c5457.jpg&text=0x3F",
+         name        = data.display_name != null ? data.display_name : channel,
+         description = status === "online" ? ': ' + data.status : "",
+         html = '';
+         html += '<div id="hover" class="row ' + status + '">';
+         html += '<div class="col-xs-2 col-sm-1" id="icon">';
+         html += '<a href=' + data.url + ' target="_blank">';
+         html += '<img src="' + logo + '" class="logo" title="Go to channel">' ;
+         html += '</a>';
+         html += '</div>';
+         html += '<div class="col-xs-10 col-sm-3" id="name">';
+         html += '<a id="name" title="'+ name +'" href=' + data.url + ' target="_blank">' + name + ' </a>';
+         html += '</div>';
+         html += '<div class="col-xs-10 col-sm-8" id="streaming">' + game;
+         html += '<span class="hidden-xs"> ' + description +' </span>';
+         html += '</div></div>';
+         status === "online" ? $("#display").prepend(html) : $("#display").append(html);
+     });
+   });
+ });
+};
 
-$( function () {
+$(document).ready(function() {
 
-  caculator.placeholder('Carry out your operation');
+ getChannelInfo();
 
-  $('.clear-text').click( function () {
-      caculator.placeholder('Carry out your operation');
-  });
+ $(".selector").click(function() {
 
-  $btnEqual.click( function () {
-      caculator.operation();
-  });
+   $(".selector").removeClass("active");
+   $(this).addClass("active");
 
-  $btnDivision.click( function () {
-      caculator.clearShowResult();
-      caculator.insertSymbol($btnDivision.text());
-  });
+   var status = $(this).attr('id');
 
-  $btnPlus.click( function () {
-      caculator.clearShowResult();
-      caculator.insertSymbol($btnPlus.text());
-  });
+   if (status === "all") {
 
-  $btnMultiply.click( function () {
-      caculator.clearShowResult();
-      caculator.insertSymbol($btnMultiply.text());
-  });
+     $(".online, .offline").removeClass("hidden");
 
-  $btnLess.click( function () {
-      caculator.clearShowResult();
-      caculator.insertSymbol($btnLess.text());
-  });
+   } else if (status === "online") {
 
-  $btnPoint.click( function () {
-      caculator.clearShowResult();
-      caculator.insertSymbol($btnPoint.text());
-  });
+     $(".online").removeClass("hidden");
+     $(".offline").addClass("hidden");
 
-  $btnCero.click( function () {
-     caculator.insertNumber($btnCero.text());
-  });
+   } else {
 
-  $btnNine.click( function () {
-     caculator.insertNumber($btnNine.text());
-  });
+     $(".offline").removeClass("hidden");
+     $(".online").addClass("hidden");
 
-  $btnEight.click( function () {
-     caculator.insertNumber($btnEight.text());
-  });
-
-  $btnSevent.click( function () {
-     caculator.insertNumber($btnSevent.text());
-  });
-
-  $btnSix.click( function () {
-     caculator.insertNumber($btnSix.text());
-  });
-
-  $btnFive.click( function () {
-     caculator.insertNumber($btnFive.text());
-  });
-
-  $btnFour.click( function () {
-     caculator.insertNumber($btnFour.text());
-  });
-
-  $btnThree.click( function () {
-     caculator.insertNumber($btnThree.text());
-  });
-
-  $btnTwo.click( function () {
-     caculator.insertNumber($btnTwo.text());
-  });
-
-  $btnOne.click( function () {
-     caculator.insertNumber($btnOne.text());
-  });
-
+   }
+ })
 });
-
-/* Create namespace calculator */
-var caculator = {
-  insertNumber: function (value) {
-
-    if (allSymbol.indexOf(caculator.getLastValue()) != -1)
-    {
-      $showResult.val("");
-    }
-    caculator.concatenateValue(value);
-  },
-
-  concatenateValue: function (value) {
-    var numberCharAllowed = 18;
-
-    if (pressEqual == true)
-    {
-       caculator.clearShowResult();
-       caculator.clearShowOperation();
-       pressEqual = false;
-    }
-
-    if ($showOperation.val().length <= 18)
-    {
-       $showOperation.val($showOperation.val() + '' + value);
-    }
-    else
-    {
-      caculator.placeholder('Digit Limit Met');
-    }
-
-    if ($showResult.val().length <= 18/2)
-    {
-      $showResult.val($showResult.val() + '' + value);
-    }
-    else
-    {
-      caculator.placeholder('Digit Limit Met');
-    }
-
-  },
-
-  insertSymbol: function (value) {
-     if ($showOperation.val().length > 0)
-     {
-       if (allSymbol.indexOf(caculator.getLastValue()) == -1)
-       {
-           caculator.concatenateValue(value);
-       }
-     }
-  },
-
-  getLastValue: function () {
-     return $showOperation.val().substr(-1);
-  },
-
-  clearShowResult: function () {
-     $showResult.val('');
-  },
-
-  clearShowOperation: function () {
-     $showOperation.val('');
-  },
-
-  placeholder: function (message) {
-     caculator.clearShowResult();
-     caculator.clearShowOperation();
-     $showResult.attr('placeholder', '0');
-     $showOperation.attr('placeholder', message);
-  },
-
-  operation: function (value) {
-     pressEqual = true;
-     $showResult.val(eval($showOperation.val()));
-     $showOperation.val($showOperation.val() + '=' + eval($showOperation.val()));
-  }
-
-}
