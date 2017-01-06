@@ -3,10 +3,10 @@
   margin     : 0;
   font-family: Open Sans, Arial;
 }
-body {
+main {
   background-color: red;
 }
-html, main {
+html {
   height          : 100%;
   overflow        : hidden;
   background-color: #333333;
