@@ -9,10 +9,10 @@ app.factory('WeatherApi', function($http) {
   var obj = {};
 
   obj.getLoc = function() {
-    return $http.jsonp("http://ipinfo.io/json?callback=JSON_CALLBACK");
+    return $http.jsonp("https://ipinfo.io/json?callback=JSON_CALLBACK");
   };
   obj.getCurrent = function(city) {
-    var api   = "http://api.openweathermap.org/data/2.5/weather?q=";
+    var api   = "https://api.openweathermap.org/data/2.5/weather?q=";
     var units = "&units=metric";
     var appid = "&APPID=061f24cf3cde2f60644a8240302983f2"
     var cb    = "&callback=JSON_CALLBACK";
