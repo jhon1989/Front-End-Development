@@ -6,13 +6,11 @@
 main {
   background-color: #a6001a;
 }
-body {
-  background-color: #333333;
-}
-html {
+
+html, body{
   height          : 100%;
   overflow        : hidden;
-  background-color: #a6001a;
+  background-color: #333333;
 }
 h1 {
   display         : block;
