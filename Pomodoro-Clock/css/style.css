@@ -3,7 +3,9 @@
   margin     : 0;
   font-family: Open Sans, Arial;
 }
-
+main {
+  background-color: #a6001a;
+}
 html {
   height          : 100%;
   overflow        : hidden;
