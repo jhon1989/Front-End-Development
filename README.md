@@ -12,6 +12,3 @@ Here my [Profile FreeCodeCamp] (https://www.freecodecamp.com/jhon1989)
  * [Simon-Game] (https://jhon1989.github.io/Front-End-Development/Simon-Game/)
  * [Twitch-Streamers] (https://jhon1989.github.io/Front-End-Development/Twitch-Streamers/)
  * [Wikipedia-Viewer] (https://jhon1989.github.io/Front-End-Development/Wikipedia-Viewer/)
-
-
-
