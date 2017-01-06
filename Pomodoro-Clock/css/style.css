@@ -4,10 +4,10 @@
   font-family: Open Sans, Arial;
 }
 main {
-  background-color: #a6001a;
+  background-color: #333333;
 }
 
-html, body{
+html, body {
   height          : 100%;
   overflow        : hidden;
   background-color: #333333;
