@@ -3,13 +3,11 @@
   margin     : 0;
   font-family: Open Sans, Arial;
 }
-main {
-  background-color: red;
-}
+
 html {
   height          : 100%;
   overflow        : hidden;
-  background-color: #333333;
+  background-color: red;
 }
 h1 {
   display         : block;
