@@ -1,0 +1,63 @@
+
+body {
+  background-color: #20556E;
+}
+.random, .clean {
+  cursor      : pointer;
+  color       : white;
+  font-size   : 310%;
+}
+.clean:hover, .random:hover {
+ color: #D96F32;
+}
+.text {
+  color    : white;
+  font-size: 130%;
+}
+#form-search {
+  margin-top: 250px;
+}
+#sarch {
+  border-radius: 20px;
+  border       : 4px solid;
+  padding      : 2px;
+}
+.href-wiki {
+  text-decoration: none;
+}
+.href-wiki:hover {
+  text-decoration: none;
+}
+.href-wiki:link {
+   text-decoration: none;
+}
+.href-wiki:visited {
+   color: #20556E;
+}
+.w3-panel {
+  background-color: white;
+}
+.w3-panel:hover {
+  border-left: 5px solid #D96F32;
+  margin-left: -10px;
+}
+.by {
+  color: white;
+  text-decoration: none;
+}
+.by:visited, .by:hover {
+  color          : white;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .by {
+        position: relative;
+        top     :70px;
+        left    : -30px;
+     }
+    .text {
+      display  : none;
+      font-size: 70%;
+    }
+}
