@@ -2,32 +2,33 @@
 <html>
     <head>
       <meta charset="utf-8">
-      <title>Wikipedia Viewer</title>
+      <title>Twitch-Streamers</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
       <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-      <main class='container'>
-        <article>
-          <div id='form-search' class='row'>
-            <div class='col-md-9 col-sm-9 col-xs-9 col-md-offset-1' title='Search here your  article'>
-              <input tyep='text' id='search' class='form-control input-lg' placeholder='Search here your  article'>
-            </div>
-             <div class="col-md-2 col-sm-2 col-xs-">
-              <span class='clean glyphicon glyphicon-remove' id='clean' title='Clean the Input'></span>
-              <span class='random glyphicon glyphicon-random' title='Click here to ramndom article'></span>
-            </div>
-          </div>
-          <div class='clearfix'></div>
-          <section>
-            <article class='search-wiki'>
-            </article>
+      <main class="container">
+        <section class='row' id="header">
+          <h1>Twitch Stremers</h1>
+          <section class="menu">
+            <section class="selector active" id="all">
+              <section class="circle"></section><p>All</p>
+            </section>
+            <section class="selector" id="online">
+              <section class='circle'></section><p>Online</p>
+            </section>
+            <section class='selector' id="offline">
+              <section class="circle"></section><p>Offline</p>
+            </section>
           </section>
-        </article>
-        <article>
-        </article>
+        </section>
+        <section id="display"></section>
+        <footer class="row" id="footer">
+          <article class='text-center'>
+            <a href="http://s.codepen.io/jhon1989/debug/PGdXdg" target='_blank'>By jhonja</a>
+          </article>
+        </footer>
       </main>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
