@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Pomodoro Clock</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+      <h1>Pomodoro Clock - FreeCodeCamp</h1>
+      <main ng-app="PomodoroApp" ng-controller="MainCtrl">
+        <header>
+          <div class="session">
+            <div class="breakCtrl">
+              <p>break length</p>
+              <button class="minus" ng-click="breakLengthChange(-1)">-</button><span class="time">{{breakLength}}</span>
+              <button class="plus" ng-click="breakLengthChange(1)">+</button>
+            </div>
+            <div class="sessionCtrl">
+              <p>session length</p>
+              <button class="minus" ng-click="sessionLengthChange(-1)">-</button><span class="time">{{sessionLength}}</span>
+              <button class="plus" ng-click="sessionLengthChange(1)">+</button>
+            </div>
+          </div>
+        </header>
+        <section ng-click="toggleTimer()">
+          <div class="timer">
+            <p class="title">{{sessionName}}</p>
+            <p>{{timeLeft}}</p><span class="fill" ng-style="{'height':fillHeight, 'background':fillColor }"></span>
+          </div>
+          <div>
+           <p class="text-center">Create By
+             <a href="http://jhonjanermoreno.info">Jhon Janer </a>
+           </p>
+          </div>
+        </section>
+      </main>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+</html
